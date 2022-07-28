@@ -1,0 +1,2 @@
+asyncssh==2.11.0
+tortoise-orm[asyncmy]==0.19.2
