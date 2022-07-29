@@ -3,11 +3,12 @@
 Author: 'LingLing'
 Date: 2022/07/19
 """
+import time
+import datetime
 from tortoise import Tortoise
 
 from OperationFrame.config import config
 from OperationFrame.lib.tools import import_paths
-
 from OperationFrame.utils.cbvmenu import menu
 from OperationFrame.utils.context_manager import menu_handler
 
@@ -28,8 +29,15 @@ async def init_tortoise():
 
 
 @menu.on_event("shutdown")
-async def clear_item():
-    print('结束清理资源')
+async def run_time():
+    print(f"RunTime: {_real_time() - startup}")
+
+
+def _real_time():
+    return datetime.timedelta(seconds=int(str(time.time()).split(".")[0]))
+
+
+startup = _real_time()
 
 
 async def menu_enter(argv):

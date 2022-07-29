@@ -87,19 +87,12 @@ class _DefaultLifespan:
 
     async def __aenter__(self) -> None:
         await self.manager.startup()
-        self.start = self._real_time
 
     async def __aexit__(self, *exc_info: object) -> None:
         await self.manager.shutdown()
-        self.end = self._real_time
-        print(f"RunTime: {self.end - self.start}")
 
     def __call__(self: t.TypeVar) -> t.TypeVar:
         return self
-
-    @property
-    def _real_time(self):
-        return datetime.timedelta(seconds=int(str(time.time()).split(".")[0]))
 
 
 menu = MenuManager()
