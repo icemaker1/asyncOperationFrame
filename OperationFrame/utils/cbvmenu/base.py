@@ -6,9 +6,6 @@ Date: 2022/07/21
 import asyncio
 import typing as t
 
-import time
-import datetime
-
 
 def _get_attr(mcs, key):
     meta: BaseMeta = getattr(mcs, 'Meta', None)
