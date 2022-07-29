@@ -23,8 +23,8 @@ class AsyncScheduler:
 
     def __init__(
             self,
-            max_workers=None,
-            stack_limit: Union[bool, int] = True,
+            max_workers: int = None,
+            stack_limit: bool = True,
             stack_file: TextIO = None,
             stack_func: Callable = None):
         if max_workers is None:

@@ -10,6 +10,7 @@
 
 - asyncssh = 2.11.0
 - tortoise-orm[asyncmy] = 0.19.2
+- loguru = 0.6.0
 
 ### 启动服务
 
