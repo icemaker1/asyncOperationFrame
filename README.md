@@ -12,6 +12,7 @@
 - tortoise-orm[asyncmy] = 0.19.2
 - fastapi = 0.79.0
 - uvicorn = 0.18.2
+- loguru = 0.6.0
 
 ### 启动服务
 
