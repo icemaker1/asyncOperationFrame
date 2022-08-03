@@ -4,13 +4,13 @@ Author: 'LingLing'
 Date: 2022/07/26
 """
 from OperationFrame.model import Game
-from OperationFrame.utils.cbvmenu import AssetsCbv
+from OperationFrame.utils.cbvmenu import CommonCbv
 
 
-class AssetsShowStatus(AssetsCbv):
+class AssetsShowStatus(CommonCbv):
 
     async def run(self):
-        res = await Game.filter(name='private_726').values('name')
+        res = await Game.all()
         print(res)
 
     class Meta:

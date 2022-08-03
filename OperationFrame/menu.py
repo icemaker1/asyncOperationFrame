@@ -3,6 +3,7 @@
 Author: 'LingLing'
 Date: 2022/07/19
 """
+import asyncio
 import time
 import datetime
 from tortoise import Tortoise
@@ -44,4 +45,7 @@ async def menu_enter(argv):
     async with menu.lifespan_context():
         with menu_handler():
             self = menu.tasks.get(argv[1])['mcs']()
-            await self.run(*argv[2:])
+            if asyncio.iscoroutinefunction(self.run):
+                await self.run(*argv[2:])
+            else:
+                self.run(*argv[2:])

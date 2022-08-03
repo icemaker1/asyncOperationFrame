@@ -18,5 +18,5 @@ def import_paths(module: str):
         for file in files:
             if not path.split('/')[-1].startswith('_') or path.split('/')[-1] == '__init__':
                 import_module(
-                    f"{config.FRAME_NAME}.{module.replace('/', '.')}.{path.split('/')[-1]}.{file.split('.')[0]}"
+                    f"{config.FRAME_NAME}{path.split(str(config.PROJECT_PATH))[1].replace('/', '.')}.{file.split('.')[0]}"
                 )

@@ -6,7 +6,7 @@ Date: 2022/07/21
 from OperationFrame.utils.cbvmenu import MenuMetaClass, BaseMeta
 
 
-class AssetsCbv(metaclass=MenuMetaClass):
+class CommonCbv(metaclass=MenuMetaClass):
     Meta = BaseMeta
 
     @property
