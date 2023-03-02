@@ -8,7 +8,7 @@ from OperationFrame.utils.connecter import remote
 
 
 async def start(srv_id):
-    cmd = f'/bin/bash /data/wzpx_{srv_id}/wzpx_{srv_id}.sh start'
+    cmd = f''
     remote_res = await remote(cmd, 'ip')
     if remote_res:
         logger.info(f'{srv_id} 启动成功')
@@ -19,7 +19,7 @@ async def start(srv_id):
 
 
 async def stop(srv_id):
-    cmd = f'/bin/bash /data/wzpx_{srv_id}/wzpx_{srv_id}.sh stop'
+    cmd = f''
     remote_res = await remote(cmd, 'ip')
     if remote_res:
         logger.info(f'{srv_id} 关闭成功')

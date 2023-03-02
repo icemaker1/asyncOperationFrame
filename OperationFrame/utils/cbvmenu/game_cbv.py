@@ -24,6 +24,7 @@ class GameCbv(metaclass=MenuMetaClass):
 
     async def run(self, *games):
         if not games:
+            # 这里询问游戏服
             games = ['private_726', 'private_727']
 
         print(games)

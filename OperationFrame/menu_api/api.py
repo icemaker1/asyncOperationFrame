@@ -13,7 +13,7 @@ class ApiStart(CommonCbv):
     这里仅仅提供前台启动方式
     """
 
-    def run(self):
+    def run(self, debug=None):
         run(app='OperationFrame.ApiFrame.rule:app', host="0.0.0.0", port=8080, debug=True, reload=True)
 
     class Meta:
