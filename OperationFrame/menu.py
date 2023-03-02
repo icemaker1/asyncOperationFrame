@@ -31,7 +31,7 @@ async def menu_enter(argv: t.List) -> t.NoReturn:
 
         param = task['params']
         if param == 'None' or '*' in param:
-            if param == 'None' and param_num != 2 or '*' in param and param_num < 3:
+            if param == 'None' and param_num != 2 or '*' in param and param_num < 2:
                 raise MenuParamError
         elif '/' in param:
             if param_num not in [2, 3]:

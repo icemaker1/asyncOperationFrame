@@ -15,7 +15,8 @@ _defaults.LOGURU_CRITICAL_COLOR = "<red><bold>"
 filter_context = contextvars.ContextVar("filter_context", default="")
 
 
-class Logger(BaseLogger):...
+class Logger(BaseLogger):
+    ...
 
 
 logger = Logger(Core(), None, 0, False, False, False, False, True, None, {})

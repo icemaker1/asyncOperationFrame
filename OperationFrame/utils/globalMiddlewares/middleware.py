@@ -8,9 +8,13 @@ from .triggers import ErrorHandler
 
 
 class Middleware(ErrorHandler):
-    def __init__(self, func: t.Callable):
-        self.func = func
+    __slots__ = ('_menu_task',)
+
+    _menu_task: t.Callable
+
+    def __init__(self, _menu_task: t.Callable):
+        self._menu_task = _menu_task
 
     async def __call__(self, *args, **kwargs):
         with self.menu_handler():
-            await self.func(*args, **kwargs)
+            await self._menu_task(*args, **kwargs)
