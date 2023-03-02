@@ -28,8 +28,7 @@ class GameCbv(metaclass=MenuMetaClass):
             games = ['private_726', 'private_727']
 
         print(games)
-        ask_enter = ask_yesno(f'是否对上述游戏服执行 {self.Meta.name} 任务')
-        if ask_enter != 'yes':
+        if not ask_yesno(f'是否对上述游戏服执行 {self.Meta.name} 任务'):
             return False
 
         if isinstance(self.Meta.func, list):
