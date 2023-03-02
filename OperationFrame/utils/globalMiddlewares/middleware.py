@@ -12,8 +12,8 @@ class Middleware(ErrorHandler):
 
     _menu_task: t.Callable
 
-    def __init__(self, _menu_task: t.Callable):
-        self._menu_task = _menu_task
+    def __init__(self, menu_task: t.Callable):
+        self._menu_task = menu_task
 
     async def __call__(self, *args, **kwargs):
         with self.menu_handler():
