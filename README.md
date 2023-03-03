@@ -14,10 +14,14 @@
 - uvicorn = 0.18.2
 - loguru = 0.6.0
 
+### 关于 框架 使用
+> 不支持 window 系统
+
+> 启动服务时请修改 config 环境配置
+
+> 协程服务中不建议使用同步组件
+
 ### 启动服务
 
 > python3 main.py Action [options]
 
-### 关于 orm
-
-> 协程服务中不建议使用同步组件
