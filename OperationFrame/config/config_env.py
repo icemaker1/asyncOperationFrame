@@ -23,6 +23,9 @@ class DEV:
     API_HOST:           str = '0.0.0.0'                               # 开发环境: api 接口地址
     API_PORT:           int = 8080                                    # 开发环境: api 接口端口
 
+    VERIFY_TYPE_KEY:    bool = True                                   # 开发环境: 校验方式：中间件加密/解密 密钥
+    VERIFY_TYPE_AUTH:   bool = False                                  # 开发环境: 校验方式：用户、角色校验
+
 
 class TEST:
     """
@@ -36,10 +39,13 @@ class TEST:
     MYSQL_PASS:         str = 'db_pass'                               # 测试环境: 管理机数据库密码
     MYSQL_CHAR:         str = 'utf8'                                  # 测试环境: 管理机数据库编码
 
-    API_DEBUG:          bool = True                                   # 开发环境: api 接口调式模式
-    API_RELOAD:         bool = True                                   # 开发环境: api 接口重载模式
-    API_HOST:           str = '0.0.0.0'                               # 开发环境: api 接口地址
-    API_PORT:           int = 7777                                    # 开发环境: api 接口端口
+    API_DEBUG:          bool = True                                   # 测试环境: api 接口调式模式
+    API_RELOAD:         bool = True                                   # 测试环境: api 接口重载模式
+    API_HOST:           str = '0.0.0.0'                               # 测试环境: api 接口地址
+    API_PORT:           int = 7777                                    # 测试环境: api 接口端口
+
+    VERIFY_TYPE_KEY:    bool = True                                   # 测试环境: 校验方式：中间件加密/解密 密钥
+    VERIFY_TYPE_AUTH:   bool = False                                  # 测试环境: 校验方式：用户、角色校验
 
 
 class PROD:
@@ -54,10 +60,13 @@ class PROD:
     MYSQL_PASS:         str = 'db_pass'                               # 生产环境: 管理机数据库密码
     MYSQL_CHAR:         str = 'utf8'                                  # 生产环境: 管理机数据库编码
 
-    API_DEBUG:          bool = False                                  # 开发环境: api 接口调式模式
-    API_RELOAD:         bool = False                                  # 开发环境: api 接口重载模式
-    API_HOST:           str = '0.0.0.0'                               # 开发环境: api 接口地址
-    API_PORT:           int = 8888                                    # 开发环境: api 接口端口
+    API_DEBUG:          bool = False                                  # 生产环境: api 接口调式模式
+    API_RELOAD:         bool = False                                  # 生产环境: api 接口重载模式
+    API_HOST:           str = '0.0.0.0'                               # 生产环境: api 接口地址
+    API_PORT:           int = 8888                                    # 生产环境: api 接口端口
+
+    VERIFY_TYPE_KEY:    bool = True                                   # 测试环境: 校验方式：中间件加密/解密 密钥
+    VERIFY_TYPE_AUTH:   bool = False                                  # 测试环境: 校验方式：用户、角色校验
 
 
 env = os.environ.get('ENVIORNMENT', 'dev')

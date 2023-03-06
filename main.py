@@ -9,4 +9,5 @@ from OperationFrame.menu import menu_enter
 
 
 if __name__ == '__main__':
-    asyncio.run(menu_enter(sys.argv))
+    asyncio.run(menu_enter(['main.py', 'api_start']))
+    # asyncio.run(menu_enter(sys.argv))

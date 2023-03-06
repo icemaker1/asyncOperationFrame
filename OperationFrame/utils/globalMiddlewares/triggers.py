@@ -10,7 +10,7 @@ from .error_classify import MenuLostError, MenuParamError
 
 
 class ErrorHandler:
-    help_error: t.Tuple[any] = (
+    help_error: t.Tuple = (
         MenuLostError,
         MenuParamError
     )

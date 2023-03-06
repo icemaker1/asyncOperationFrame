@@ -3,12 +3,10 @@
 Author: 'LingLing'
 Date: 2022/08/03
 """
-from fastapi import Request
-
+from OperationFrame.ApiFrame.base import app, Middleware
 from OperationFrame.config import config
 from OperationFrame.utils.logger import logger
 from OperationFrame.lib.tools import import_paths
-from OperationFrame.ApiFrame.base import app
 
 
 # 载入模块
@@ -16,12 +14,7 @@ for module, view_dir in config.API_VIEWS_DIR.items():
     import_paths(view_dir)
     logger.debug(f"import models {module}: {config.FRAME_NAME}.{view_dir}")
 
-
-@app.middleware("http")
-async def add_process_time_header(request: Request, call_next):
-    response = await call_next(request)
-    print('response', response)
-    print('request', request)
-    print(app.user_middleware)
-    return response
-
+# 载入中间件
+for name, middleware in Middleware[::-1]:
+    app.add_middleware(middleware)
+    logger.debug(f"add middleware {name}")

@@ -4,3 +4,4 @@ Author: 'LingLing'
 Date: 2022/08/03
 """
 from .app import app
+from .middleware import Middleware
