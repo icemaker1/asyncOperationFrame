@@ -4,6 +4,7 @@ Author: 'LingLing'
 Date: 2022/08/03
 """
 from uvicorn import run
+from OperationFrame.config import config
 from OperationFrame.utils.cbvmenu import CommonCbv
 
 
@@ -14,7 +15,10 @@ class ApiStart(CommonCbv):
     """
 
     def run(self, debug=None):
-        run(app='OperationFrame.ApiFrame.rule:app', host="0.0.0.0", port=8080, debug=True, reload=True)
+        run(
+            app='OperationFrame.ApiFrame.rule:app', host=config.API_HOST,
+            port=config.API_PORT, debug=config.API_DEBUG, reload=config.API_RELOAD
+        )
 
     class Meta:
         name = 'api启动'

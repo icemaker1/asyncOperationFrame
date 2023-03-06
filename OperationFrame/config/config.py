@@ -13,9 +13,13 @@ class BaseConfig:
     """
     PROJECT_PATH:      Path = Path(__file__).parent.parent.resolve()   # 项目根目录
     FRAME_NAME:         str = PROJECT_PATH.name                        # 框架名称
-    TERMINAL_VIEW_DIR: list = ['menu_terminal']                        # 终端菜单视图目录
-    API_VIEW_DIR:      list = ['menu_api']                             # 接口菜单视图目录
     DB_MODELS:         list = ['OperationFrame.model']                 # orm模型列表
+    TERMINAL_VIEW_DIR: list = ['menu_terminal']                        # 终端菜单视图目录
+    API_VIEWS_DIR:     dict = {                                        # 接口加载模块
+        'view': 'ApiFrame.apps',                                       # 接口加载模块：app 接口
+        'task': 'ApiFrame.worker.task',                                # 接口加载模块：app 异步任务接口
+        'cron': 'ApiFrame.worker.cron',                                # 接口加载模块：app 计划任务接口
+    }
 
     def __setitem__(self, key, value) -> None:
         self.__dict__[key] = value

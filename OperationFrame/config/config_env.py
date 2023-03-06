@@ -18,6 +18,11 @@ class DEV:
     MYSQL_PASS:         str = 'db_pass'                               # 开发环境: 管理机数据库密码
     MYSQL_CHAR:         str = 'utf8'                                  # 开发环境: 管理机数据库编码
 
+    API_DEBUG:          bool = True                                   # 开发环境: api 接口调式模式
+    API_RELOAD:         bool = True                                   # 开发环境: api 接口重载模式
+    API_HOST:           str = '0.0.0.0'                               # 开发环境: api 接口地址
+    API_PORT:           int = 8080                                    # 开发环境: api 接口端口
+
 
 class TEST:
     """
@@ -31,6 +36,11 @@ class TEST:
     MYSQL_PASS:         str = 'db_pass'                               # 测试环境: 管理机数据库密码
     MYSQL_CHAR:         str = 'utf8'                                  # 测试环境: 管理机数据库编码
 
+    API_DEBUG:          bool = True                                   # 开发环境: api 接口调式模式
+    API_RELOAD:         bool = True                                   # 开发环境: api 接口重载模式
+    API_HOST:           str = '0.0.0.0'                               # 开发环境: api 接口地址
+    API_PORT:           int = 7777                                    # 开发环境: api 接口端口
+
 
 class PROD:
     """
@@ -43,6 +53,11 @@ class PROD:
     MYSQL_USER:         str = 'root'                                  # 生产环境: 管理机数据库用户
     MYSQL_PASS:         str = 'db_pass'                               # 生产环境: 管理机数据库密码
     MYSQL_CHAR:         str = 'utf8'                                  # 生产环境: 管理机数据库编码
+
+    API_DEBUG:          bool = False                                  # 开发环境: api 接口调式模式
+    API_RELOAD:         bool = False                                  # 开发环境: api 接口重载模式
+    API_HOST:           str = '0.0.0.0'                               # 开发环境: api 接口地址
+    API_PORT:           int = 8888                                    # 开发环境: api 接口端口
 
 
 env = os.environ.get('ENVIORNMENT', 'dev')

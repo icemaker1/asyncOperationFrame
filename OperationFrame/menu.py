@@ -14,7 +14,7 @@ from OperationFrame.utils.logger import logger
 
 
 # 载入菜单模块
-for module in config.TERMINAL_VIEW_DIR + config.API_VIEW_DIR:
+for module in config.TERMINAL_VIEW_DIR:
     import_paths(module)
 
 
