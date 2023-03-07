@@ -3,10 +3,10 @@
 Author: 'LingLing'
 Date: 2022/08/03
 """
-
-from OperationFrame.config import config
 from fastapi import FastAPI
 from tortoise.contrib.fastapi import register_tortoise
+
+from OperationFrame.config import config
 
 app = FastAPI()
 

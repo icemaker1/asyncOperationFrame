@@ -58,7 +58,7 @@ class VerifyMiddleware(BaseHTTPMiddleware):
     using: bool = config.VERIFY_TYPE_KEY
 
     async def dispatch(self, request: Request, call_next: RequestResponseEndpoint) -> Response:
-        print('sign', request.headers.get('sign', ''))
-        print('time', request.headers.get('time', ''))
+        # print('sign', request.headers.get('sign', ''))
+        # print('time', request.headers.get('time', ''))
         response: Response = await call_next(request)
         return response
